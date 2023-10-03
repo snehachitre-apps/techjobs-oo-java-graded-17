@@ -4,14 +4,25 @@ import java.util.Objects;
 
 public class Employer extends JobField{
 
-//    private int id;
+
+    //    private int id;
 //    private static int nextId = 1;
-//    private String value;
+    private String value;
 
 
 
     public Employer(String value) {
         super();
+        this.value=value;
+    }
+    @Override
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public void setValue(String value) {
+        this.value = value;
     }
 
     // Custom toString, equals, and hashCode methods:

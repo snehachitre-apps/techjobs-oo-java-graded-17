@@ -54,13 +54,13 @@ public class Job {
         } else {
             if (this.name == "")
                 this.name = "Data not available";
-            if (this.employer.toString() == "")
+            if (this.employer.getValue() == "")
                 this.employer.setValue("Data not available");
-            if (this.location.toString() == "")
+            if (this.location.getValue() == "")
                 this.location.setValue("Data not available");
-            if (this.positionType.toString() == "")
+            if (this.positionType.getValue() == "")
                 this.positionType.setValue("Data not available");
-            if (this.coreCompetency.toString() == "")
+            if (this.coreCompetency.getValue() == "")
                 this.coreCompetency.setValue("Data not available");
 
 
