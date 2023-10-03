@@ -62,8 +62,8 @@ public class JobTest {
 
         boolean first= string.startsWith(newLine);
         boolean last=string.endsWith(newLine);
-        assertEquals(true,first,"Sgring Starts with new line");
-        assertEquals(true,last,"Sgring ends with new line");
+        assertEquals(true,first,"String Starts with new line");
+        assertEquals(true,last,"String ends with new line");
 
     }
 
@@ -72,7 +72,7 @@ public class JobTest {
         Job test_job7= new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String newLine= System.lineSeparator();
 
-        String string=test_job7.toString();
+//        String string=test_job7.toString();
 
         String expected= newLine +"ID:  " + test_job7.getId()+  newLine+
         "Name: Product tester" + newLine +
@@ -91,7 +91,7 @@ public class JobTest {
         Job test_job8= new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String newLine= System.lineSeparator();
 
-        String string=test_job8.toString();
+//        String string=test_job8.toString();
 
         String expected= newLine +"ID:  " + test_job8.getId()+  newLine+
                 "Name: Product tester" + newLine +
@@ -108,16 +108,16 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesAllEmptyFieldExceptID(){
-//        Job test_job9= new Job();
+        Job test_job9= new Job();
 //        String newLine= System.lineSeparator();
-//
-//        String string=test_job9.toString();
-//
-//        String expected= "OOPS! This job does not seem to exist";
-//
-//        String actual=test_job9.toString();
-//
-//        assertEquals(expected,actual,"toString handles all empty fields except ID");
+
+        String string=test_job9.toString();
+
+        String expected= "OOPS! This job does not seem to exist";
+
+        String actual=test_job9.toString();
+
+        assertEquals(expected,actual,"toString handles all empty fields except ID");
 
     }
 }

@@ -38,13 +38,21 @@ public class Job {
 
     @Override
     public String toString() {
+//        String newLine = System.getProperty("line.separator");
+//        this.name = this.getName() == ""? "Data not available"  : getName();
+//        String employer = (employer.getValue()=="") ? "Data not available" :getEmployer().getValue();
+//        employer.equals(employer);
+//        String location = (location.getValue()=="") ? "Data not available" :getLocation().getValue();
+//        location.equals(loc);
+//     String positionType = (positionType.getValue()=="") ? "Data not available" :getPositionType().getValue();
+
         String newline = System.getProperty("line.separator");
-//        if ( !this.getName() && this.getEmployer() && this.getLocation()  && this.getPositionType() && this.getCoreCompetency()))
-//        {
-//            return "OOPS! This job does not seem to exist";
-//
-//        } else {
-            if (this.name.toString() == "")
+        if ( ((this.name == null) && (this.employer ==null) && (this.location== null)  && (this.positionType==null) && (this.coreCompetency==null)))
+        {
+            return "OOPS! This job does not seem to exist";
+
+        } else {
+            if (this.name == "")
                 this.name = "Data not available";
             if (this.employer.toString() == "")
                 this.employer.setValue("Data not available");
@@ -66,7 +74,7 @@ public class Job {
 
             return returnString;
         }
-//    }
+    }
 
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
