@@ -225,15 +225,15 @@ public class TestTaskThree extends AbstractTest {
             fail("Job does not declare an equals method");
         }
 
-        assertTrue(job.equals(job));
-        assertFalse(job.equals(anotherJob));
+        assertEquals(job, job);
+        assertNotEquals(job, anotherJob);
         assertNotEquals(getJobId(job), getJobId(anotherJob));
 
         // Use reflection to make both objects have the same id and test
         Field anotherJobIdField = Job.class.getDeclaredField("id");
         anotherJobIdField.setAccessible(true);
         anotherJobIdField.set(anotherJob, getJobId(job));
-        assertTrue(job.equals(anotherJob));
+        assertEquals(job, anotherJob);
     }
 
     @Test

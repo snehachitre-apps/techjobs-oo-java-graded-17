@@ -11,9 +11,10 @@ public abstract class JobField {
 
 
 
-    public JobField(int id) {
+    public JobField(String value) {
         this();
-        this.id = id;
+//        this.id = id;
+        this.value= value;
     }
 
     public JobField() {

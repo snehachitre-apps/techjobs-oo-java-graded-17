@@ -64,7 +64,7 @@ public class Job {
                 this.coreCompetency.setValue("Data not available");
 
 
-            String returnString = newline + "ID:  " + this.id + newline +
+            String returnString = newline + "ID: " + this.id + newline +
                     "Name: " + this.name + newline +
                     "Employer: " + this.employer + newline +
                     "Location: " + this.location + newline +

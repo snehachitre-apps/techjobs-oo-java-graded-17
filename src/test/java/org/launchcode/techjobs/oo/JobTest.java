@@ -13,15 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class JobTest {
     //TODO: Create your unit tests here
-    //empty test
-    @Test
-    public void emptyTest(){
-        assertTrue(true);
-    }
 
 
     @Test
-    public void testTwoJobObjectsNotEqual(){
+    public void testSettingJobId(){
         Job test_job1=new Job();
         Job test_job2=new Job();
         assertNotEquals(test_job1.getId(),test_job2.getId());
@@ -30,6 +25,7 @@ public class JobTest {
     @Test
     public void testJobConstructorSetsAllFields(){
         Job test_job3= new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
         assertTrue(test_job3.getEmployer() instanceof Employer, "ACME should be instance of Employer");
         assertTrue(test_job3.getLocation() instanceof Location,"Desert should be instance of Location");
         assertTrue(test_job3.getPositionType() instanceof PositionType,"Quality control should be instance of PositionType");
@@ -49,7 +45,7 @@ public class JobTest {
         Job test_job4= new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job test_job5= new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        assertFalse(test_job4.equals(test_job5));
+        assertNotEquals(test_job4.getId(), test_job5.getId());
     }
 
     @Test
@@ -62,8 +58,8 @@ public class JobTest {
 
         boolean first= string.startsWith(newLine);
         boolean last=string.endsWith(newLine);
-        assertEquals(true,first,"String Starts with new line");
-        assertEquals(true,last,"String ends with new line");
+        assertTrue(first, "String Starts with new line");
+        assertTrue(last, "String ends with new line");
 
     }
 
@@ -74,7 +70,7 @@ public class JobTest {
 
 //        String string=test_job7.toString();
 
-        String expected= newLine +"ID:  " + test_job7.getId()+  newLine+
+        String expected= newLine +"ID: " + test_job7.getId()+  newLine+
         "Name: Product tester" + newLine +
         "Employer: ACME" + newLine +
         "Location: Desert" + newLine +
@@ -93,7 +89,7 @@ public class JobTest {
 
 //        String string=test_job8.toString();
 
-        String expected= newLine +"ID:  " + test_job8.getId()+  newLine+
+        String expected= newLine +"ID: " + test_job8.getId()+  newLine+
                 "Name: Product tester" + newLine +
                 "Employer: ACME" + newLine +
                 "Location: Data not available" + newLine +
